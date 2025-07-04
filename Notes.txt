@@ -1,0 +1,5 @@
+How to migrate our SQL Server
+Tools=>Nuget Package Manager=>Package Manager Console
+1) Add-Migration InitDb
+2) Update-Database
+3) Remove-Migration
