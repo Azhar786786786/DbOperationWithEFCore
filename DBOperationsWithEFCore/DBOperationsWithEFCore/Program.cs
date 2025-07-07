@@ -14,6 +14,8 @@ namespace DBOperationsWithEFCore
 
                 options.UseSqlServer(builder.Configuration.GetConnectionString("AppDbCon"))
             );
+            
+            
             // Add services to the container.
 
             builder.Services.AddControllers();
