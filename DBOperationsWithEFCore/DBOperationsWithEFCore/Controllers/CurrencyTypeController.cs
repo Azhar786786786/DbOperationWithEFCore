@@ -15,7 +15,7 @@ namespace DBOperationsWithEFCore.Controllers
         {
             _appDbContext = appDbContext;
         }
-        //[HttpGet]
+        //[HttpGet]//GetAllData
         //public IActionResult GetAllCurrencies()
         //{
         //    //var result = _appDbContext.Currencies.ToList();
@@ -28,7 +28,7 @@ namespace DBOperationsWithEFCore.Controllers
         //    return Ok(result.ToList());
         //}
 
-        [HttpGet]
+        [HttpGet]//GetAllData
         public async Task<IActionResult> GetAllCurrencies()
         {
             //var result =await _appDbContext.Currencies.ToListAsync();
