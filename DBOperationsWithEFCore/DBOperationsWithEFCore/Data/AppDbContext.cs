@@ -37,6 +37,6 @@ namespace DBOperationsWithEFCore.Data
         public DbSet<Language> Languages { get; set; }
         public DbSet<BookPrice> BookPrices { get; set; }
         public DbSet<CurrencyType> Currencies { get; set; }
-        //public DbSet<Author> Authors { get; set; }
+        public DbSet<Author> Authors { get; set; }
     }
 }
