@@ -3,3 +3,25 @@ Tools=>Nuget Package Manager=>Package Manager Console
 1) Add-Migration InitDb
 2) Update-Database
 3) Remove-Migration
+
+================================================================================================
+
+How to Add Data in Books
+{
+  "id": 0,
+  "title": "C with DS",
+  "description": "E Balaguruswami",
+  "noOfPages": 345,
+  "isActive": true,
+  "createdOn": "2025-07-10T04:06:36.505Z",
+  "languageId": 1,
+  "authorId": 1,
+  "language": null,
+  "author": {
+    
+    "name": "Azhar Hussain",
+    "email": "azh@gmail.com"
+  }
+}
+
+================================================================================================
