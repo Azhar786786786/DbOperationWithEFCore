@@ -14,19 +14,22 @@ namespace DBOperationsWithEFCore.Controllers
         [HttpGet("")]
         public async Task<IActionResult> GetAllBooksAsync()
         {
-            var columnName = "Id";
-            var columnValue = "1";
+            //var columnName = "Id";
+            //var columnValue = "1";
 
-            var parameter = new SqlParameter("columnValue", columnValue);
+            //var parameter = new SqlParameter("columnValue", columnValue);
 
             /*var books = await appDbContext.Books
                             .FromSql($"select * from Books where {columnName} = {columnValue}")
                             .ToListAsync();*/
 
-            var books1 = await appDbContext.Books
+            /*var books1 = await appDbContext.Books
                            .FromSqlRaw($"select * from Books where {columnName} = @columnValue", parameter)
-                           .ToListAsync();
-            var books = await appDbContext.Database.ExecuteSqlAsync($"update Books set NoOfPages = 1000 where Id = 1");
+                           .ToListAsync();*/
+
+            //var books = await appDbContext.Database.ExecuteSqlAsync($"update Books set NoOfPages = 1000 where Id = 1");
+
+            var books = await appDbContext.Books.ToListAsync();
 
             return Ok(books);
         }
@@ -80,8 +83,11 @@ namespace DBOperationsWithEFCore.Controllers
         }
 
         [HttpPut("")]
-        public async Task<IActionResult> UpdateBookWithSingleQuery([FromBody] Book model)
+        public async Task<IActionResult> UpdateBookWithSingleQuery([FromBody] Book model)//Performance booster
         {
+            //appDbContext.Books.Update(model);
+            //await appDbContext.SaveChangesAsync();
+
             appDbContext.Entry(model).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             await appDbContext.SaveChangesAsync();
 
